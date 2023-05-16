@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
+  // sassOptions: {
+  //   includePaths: ["src/scss"],
+  //   prependData:
 
-module.exports = nextConfig
+  //     @import "./src/scss/variables/_colors.scss";
+
+  // },
+};
+
+module.exports = nextConfig;
