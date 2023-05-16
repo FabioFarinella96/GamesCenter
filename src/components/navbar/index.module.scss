@@ -1,0 +1,46 @@
+.Navbar {
+  width: 85%;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  background-color: rgba($color: #061b25, $alpha: 1);
+  padding: 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .iconsList {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+    .navIcon {
+      color: #ffff;
+      height: 25px;
+      width: 25px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .Navbar {
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    width: 6%;
+    height: 85%;
+    flex-direction: column;
+    padding: 16px 14px;
+
+    .iconsList {
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+}
