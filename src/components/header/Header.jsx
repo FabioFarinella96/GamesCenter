@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import { BiSearch, BiUser } from "react-icons/bi";
 
-const Header = (): any => {
+const Header = () => {
   return (
     <div className={styles.Header}>
       <h1 className={styles.title}>Explore</h1>

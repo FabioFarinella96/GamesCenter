@@ -3,7 +3,7 @@ import { BiHomeAlt2 } from "react-icons/bi";
 import { BsBookmarkStar } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
 
-const Navbar = (): any => {
+const Navbar = () => {
   return (
     <div className={styles.Navbar}>
       <ul className={styles.iconsList}>

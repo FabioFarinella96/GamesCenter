@@ -1,13 +1,22 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+import styles from "../styles/Home.module.css";
+import { useState, useEffect } from "react";
+import { GET } from "../src/utils/http";
 
 // Layout
-import Layout from "@/src/Layout";
+import Layout from "../src/Layout";
 
 // components
-import Hero from "@/src/components/hero";
+import Hero from "../src/components/hero";
+import CardList from "../src/components/cardList";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    GET("games").then((data) => setData(data));
+  }, []);
+
   return (
     <>
       <Head>
@@ -19,6 +28,7 @@ export default function Home() {
       <Layout>
         <main className={styles.main}>
           <Hero />
+          <CardList data={data} />
         </main>
       </Layout>
     </>
