@@ -1,2 +1,65 @@
 .Hero {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .mainImage {
+    height: 95%;
+    width: 95%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .overflow {
+    position: absolute;
+    height: 95%;
+    width: 95%;
+    background-color: transparent;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 6px;
+
+    .circlesList {
+      background-color: rgba($color: #18121f, $alpha: 0.8);
+      border-radius: 10px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 6px;
+
+      .circle {
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        background-color: transparent;
+        border: 1px solid black;
+        cursor: pointer;
+        transition: 0.6s;
+      }
+
+      .circleSelected {
+        background-color: black;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .Hero {
+    height: 400px;
+
+    .mainImage {
+      height: 95%;
+      width: 50%;
+    }
+  }
 }
