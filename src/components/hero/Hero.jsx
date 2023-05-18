@@ -4,7 +4,7 @@ import styles from "./index.module.scss";
 const Hero = () => {
   const [circleSelected, setCircleSelected] = useState(1);
 
-  const selectCircle = (value: number): void => {
+  const selectCircle = (value) => {
     return setCircleSelected(value);
   };
 
