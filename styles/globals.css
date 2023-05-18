@@ -7,3 +7,7 @@
   background-color: #18121f;
   font-family: "Roboto", sans-serif;
 }
+
+body {
+  background: linear-gradient(to bottom right, #403f44, #1e1b32);
+}
