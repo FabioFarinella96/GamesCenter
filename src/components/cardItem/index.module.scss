@@ -1,2 +1,47 @@
 .CardItem {
+  width: 130px;
+  height: 200px;
+  position: relative;
+
+  .title {
+    color: white;
+    font-size: 18px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 50px;
+    left: 5px;
+    z-index: 1;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.6);
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .platform {
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 12px;
+    color: white;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    z-index: 1;
+  }
+
+  .ps4 {
+    background-color: rgba(12, 12, 196, 0.632);
+  }
+
+  .xbox {
+    background-color: rgba(0, 128, 0, 0.645);
+  }
+
+  .nintendo {
+    background-color: rgba(255, 0, 0, 0.549);
+  }
 }

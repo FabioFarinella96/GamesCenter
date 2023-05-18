@@ -5,6 +5,9 @@ const Hero = () => {
   const [circleSelected, setCircleSelected] = useState(1);
 
   const selectCircle = (value) => {
+
+    return setCircleSelected(value);
+
     setCircleSelected(value);
     if (value === 1) {
       setActualImage(() => arrayProva[0]);
@@ -13,6 +16,7 @@ const Hero = () => {
     } else if (value === 3) {
       setActualImage(() => arrayProva[2]);
     }
+
   };
 
   const [arrayProva, setArrayProva] = useState([
