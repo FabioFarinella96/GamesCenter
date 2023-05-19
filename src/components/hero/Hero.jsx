@@ -4,7 +4,6 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
-import "swiper/scss/autoplay";
 
 const Hero = () => {
   return (
