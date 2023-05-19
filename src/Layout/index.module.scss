@@ -2,3 +2,10 @@
   width: 100%;
   padding: 0 10px;
 }
+
+@media screen and (min-width: 780px) {
+  .Layout {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
