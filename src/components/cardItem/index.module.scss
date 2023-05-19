@@ -7,14 +7,24 @@
     position: absolute;
     top: 8px;
     right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgba(30, 30, 30, 0.658);
+    padding: 5px 8px;
     color: #00d699;
-    font-weight: 100;
-    font-size: 0.9em;
+    font-size: 0.6em;
     cursor: pointer;
     transition: 0.2s;
 
+    .icon {
+      font-size: 20px;
+    }
+
     &:hover {
-      color: #00ffb7;
+      background-color: #00d699;
+      color: #f3f3f3;
     }
   }
 
@@ -26,6 +36,7 @@
     bottom: 50px;
     left: 5px;
     z-index: 1;
+    cursor: pointer;
   }
 
   .genres {
@@ -116,6 +127,11 @@
       bottom: 60px;
       left: 105px;
       z-index: 1;
+    }
+
+    .seeMore {
+      padding: 10px 15px;
+      font-size: 0.9em;
     }
   }
 }
