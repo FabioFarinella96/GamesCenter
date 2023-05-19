@@ -23,3 +23,11 @@
     padding: 0 10px;
   }
 }
+
+@media screen and (min-width: 780px) {
+  .CardList {
+    .list {
+      gap: 50px 20px;
+    }
+  }
+}

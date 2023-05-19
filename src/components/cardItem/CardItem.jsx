@@ -1,11 +1,12 @@
 import styles from "./index.module.scss";
 
 const CardItem = ({ game }) => {
-  const { name, background_image, platforms } = game;
+  const { name, background_image, platforms, genres } = game;
 
   return (
     <div className={styles.CardItem}>
       <h4 className={styles.title}>{name}</h4>
+      <p className={styles.genres}>{genres[0]?.name}</p>
       <p
         className={`${styles.platform} ${
           platforms[0].platform.name.includes("PlayStation") && styles.ps4
