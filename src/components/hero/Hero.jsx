@@ -1,55 +1,44 @@
-import { useState } from "react";
 import styles from "./index.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper";
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
+import "swiper/scss/autoplay";
 
 const Hero = () => {
-  const [circleSelected, setCircleSelected] = useState(1);
-
-  const selectCircle = (value) => {
-    setCircleSelected(value);
-    if (value === 1) {
-      setActualImage(() => arrayProva[0]);
-    } else if (value === 2) {
-      setActualImage(() => arrayProva[1]);
-    } else if (value === 3) {
-      setActualImage(() => arrayProva[2]);
-    }
-  };
-
-  const [arrayProva, setArrayProva] = useState([
-    "https://www.hynerd.it/wp-content/uploads/2022/03/hogwarts-legacy.jpg",
-    "https://www.kotaworld.it/images/2022/09/24/mw2-reveal-meta-share.jpg",
-    "https://cdn.cloudflare.steamstatic.com/steam/apps/782330/capsule_616x353.jpg?t=1661971606",
-  ]);
-
-  const [actualImage, setActualImage] = useState(
-    "https://www.hynerd.it/wp-content/uploads/2022/03/hogwarts-legacy.jpg"
-  );
-
   return (
     <div className={styles.Hero}>
       <div className={styles.mainImage}>
-        <img src={actualImage} alt="hero image" />
+        <Swiper
+          modules={[Navigation, Pagination, A11y, Autoplay]}
+          navigation={{ nextEl: false }}
+          pagination={{ clickable: true }}
+          spaceBetween={40}
+          slidesPerView={1}
+          className={styles.swiper}
+          autoplay
+        >
+          <SwiperSlide className={styles.swiperSlide}>
+            <img
+              src="https://www.hynerd.it/wp-content/uploads/2022/03/hogwarts-legacy.jpg"
+              alt="hero image"
+            />
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <img
+              src="https://www.kotaworld.it/images/2022/09/24/mw2-reveal-meta-share.jpg"
+              alt="hero image"
+            />
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <img
+              src="https://cdn.cloudflare.steamstatic.com/steam/apps/782330/capsule_616x353.jpg?t=1661971606"
+              alt="hero image"
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
-      <ul className={styles.circlesList}>
-        <li
-          onClick={() => selectCircle(1)}
-          className={`${styles.circle} ${
-            circleSelected === 1 && styles.circleSelected
-          }`}
-        ></li>
-        <li
-          onClick={() => selectCircle(2)}
-          className={`${styles.circle} ${
-            circleSelected === 2 && styles.circleSelected
-          }`}
-        ></li>
-        <li
-          onClick={() => selectCircle(3)}
-          className={`${styles.circle} ${
-            circleSelected === 3 && styles.circleSelected
-          }`}
-        ></li>
-      </ul>
     </div>
   );
 };

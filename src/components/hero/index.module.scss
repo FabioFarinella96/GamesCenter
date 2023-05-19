@@ -5,61 +5,44 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin: 20px 0px 0px 0px;
 
   .mainImage {
     height: 95%;
-    width: 95%;
+    width: 90%;
     display: flex;
-    gap: 10px;
-    overflow-x: scroll;
+    justify-content: center;
 
     &::-webkit-scrollbar {
       display: none;
     }
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-  }
+    .swiper {
+      span {
+        background-color: #007aff;
+      }
 
-  .circlesList {
-    position: absolute;
-    bottom: 15px;
-    background-color: rgba($color: #2d223a, $alpha: 0.8);
-    border-radius: 10px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 6px;
+      .swiperSlide {
+        height: 90%;
+        width: 100%;
 
-    .circle {
-      height: 10px;
-      width: 10px;
-      border-radius: 100%;
-      background-color: transparent;
-      border: 1px solid black;
-      cursor: pointer;
-      transition: 0.6s;
-    }
-
-    .circleSelected {
-      background-color: white;
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
 
 @media screen and (min-width: 780px) {
   .Hero {
-    height: 400px;
+    height: 500px;
 
     .mainImage {
-      height: 95%;
-      width: 50%;
+      width: 70%;
     }
   }
 }
