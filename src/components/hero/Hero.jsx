@@ -16,7 +16,7 @@ const Hero = () => {
           spaceBetween={40}
           slidesPerView={1}
           className={styles.swiper}
-          autoplay
+          autoplay={{ delay: 4000 }}
         >
           <SwiperSlide className={styles.swiperSlide}>
             <img
