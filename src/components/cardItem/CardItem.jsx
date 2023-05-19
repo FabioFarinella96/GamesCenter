@@ -18,6 +18,7 @@ const CardItem = ({ game }) => {
         {platforms[0].platform.name}
       </p>
       <img className={styles.image} src={background_image} alt={name} />
+      <p className={styles.seeMore}>See more</p>
     </div>
   );
 };

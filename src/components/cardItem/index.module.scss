@@ -3,6 +3,21 @@
   height: 200px;
   position: relative;
 
+  .seeMore {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: #00d699;
+    font-weight: 100;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      color: #00ffb7;
+    }
+  }
+
   .title {
     color: white;
     font-size: 18px;
