@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import { BsArrowRightShort } from "react-icons/bs";
+import Link from "next/link";
 
 const CardItem = ({ game }) => {
   const { name, background_image, platforms, genres } = game;
@@ -19,9 +20,11 @@ const CardItem = ({ game }) => {
         {platforms[0].platform.name}
       </p>
       <img className={styles.image} src={background_image} alt={name} />
-      <p className={styles.seeMore}>
-        See more <BsArrowRightShort className={styles.icon} />
-      </p>
+      <Link href="/SingleGame">
+        <p className={styles.seeMore}>
+          See more <BsArrowRightShort className={styles.icon} />
+        </p>
+      </Link>
     </div>
   );
 };
