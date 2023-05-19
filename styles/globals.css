@@ -4,10 +4,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #18121f;
   font-family: "Roboto", sans-serif;
 }
 
 body {
-  background: linear-gradient(to bottom right, #403f44, #1e1b32);
+  background: linear-gradient(to bottom right, #131214, #1e1b32);
 }
