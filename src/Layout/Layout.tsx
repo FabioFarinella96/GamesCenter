@@ -6,8 +6,8 @@ const Layout = ({ children }: any) => {
   return (
     <div className={styles.Layout}>
       <Header />
-      {children}
       <Navbar />
+      {children}
     </div>
   );
 };
