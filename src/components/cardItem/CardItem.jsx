@@ -1,9 +1,18 @@
 import styles from "./index.module.scss";
 import { BsArrowRightShort } from "react-icons/bs";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const CardItem = ({ game }) => {
-  const { name, background_image, platforms, genres } = game;
+  const { slug, name, background_image, platforms, genres } = game;
+
+  const router = useRouter();
+
+  const openGame = () => {
+    router.push({
+      pathname: "SingleGame",
+      query: { slug },
+    });
+  };
 
   return (
     <div className={styles.CardItem}>
@@ -20,11 +29,10 @@ const CardItem = ({ game }) => {
         {platforms[0].platform.name}
       </p>
       <img className={styles.image} src={background_image} alt={name} />
-      <Link href="/SingleGame">
-        <p className={styles.seeMore}>
-          See more <BsArrowRightShort className={styles.icon} />
-        </p>
-      </Link>
+
+      <p className={styles.seeMore} onClick={openGame}>
+        See more <BsArrowRightShort className={styles.icon} />
+      </p>
     </div>
   );
 };
