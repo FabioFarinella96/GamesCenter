@@ -7,15 +7,11 @@ import { useState, useEffect } from "react";
 export default function SingleGame() {
   const router = useRouter();
 
-  const { game } = router.query;
-
   const [data, setData] = useState({});
 
   useEffect(() => {
-    if (router.isReady) {
-      GET(`games/${game}`).then((data) => setData(data));
-    }
-  }, [router.isReady]);
+    GET(`games/${router.query.slug}`).then((data) => setData(data));
+  }, []);
 
   useEffect(() => {
     console.log(data);
@@ -24,7 +20,7 @@ export default function SingleGame() {
   return (
     <Layout>
       <div className={styles.SingleGame}>
-        <p>{data?.description}</p>
+        <p>{data?.description_raw}</p>
       </div>
     </Layout>
   );
