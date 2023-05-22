@@ -13,10 +13,6 @@ export default function SingleGame() {
     GET(`games/${router.query.slug}`).then((data) => setData(data));
   }, []);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <Layout>
       <div className={styles.SingleGame}>

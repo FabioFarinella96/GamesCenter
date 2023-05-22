@@ -6,7 +6,7 @@ const CardList = ({ data }) => {
     <div className={styles.CardList}>
       <h2 className={styles.title}>Top games</h2>
       <p className={styles.subtitle}>
-        Here you can find some of the most loved games{" "}
+        Here you can find some of the most loved games
       </p>
       <div className={styles.list}>
         {data.results?.map((game) => (
