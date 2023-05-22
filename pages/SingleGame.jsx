@@ -1,4 +1,4 @@
-import styles from "./singleGame/index.module.scss";
+import styles from "./pages-styles/singleGame.module.scss";
 import Layout from "../src/Layout/Layout";
 import { GETSingleGame } from "../src/utils/http";
 import { useRouter } from "next/router";

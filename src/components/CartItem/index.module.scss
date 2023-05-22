@@ -1,0 +1,12 @@
+.CartItem {
+  width: 90%;
+  border-radius: 10px;
+  background-color: #0f4355;
+  height: 100px;
+}
+
+@media screen and (min-width: 780px) {
+  .CartItem {
+    width: 200px;
+  }
+}
