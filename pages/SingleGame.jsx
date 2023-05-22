@@ -1,5 +1,10 @@
+
 import styles from "../styles/singleGame.module.scss";
 import SinglePageLayout from "../src/Layout/SinglePageLayout/SinglePageLayout";
+
+import styles from "./pages-styles/singleGame.module.scss";
+
+
 import { GETSingleGame } from "../src/utils/http";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";

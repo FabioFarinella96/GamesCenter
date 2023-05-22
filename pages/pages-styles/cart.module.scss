@@ -1,0 +1,141 @@
+.Cart {
+  min-height: 90vh;
+  color: white;
+  margin-top: 10vh;
+  margin-bottom: 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .titleNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 14px;
+
+    .goBack {
+      font-size: 25px;
+      cursor: pointer;
+      background-color: rgba($color: #000000, $alpha: 1);
+      border: 1px solid white;
+      padding: 10px;
+      border-radius: 100%;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 100;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #028e66;
+        border: none;
+      }
+    }
+  }
+
+  .cartList {
+    margin: 40px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .checkout {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba($color: #0a2f3b, $alpha: 0.8);
+    border-radius: 10px;
+
+    .totPrice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .price {
+        color: #02aa7a;
+      }
+    }
+
+    .goPay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6em;
+      border-radius: 10px;
+      padding: 12px;
+      background-color: #02aa7a;
+      transition: 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #028e66;
+      }
+
+      &:active {
+        transform: scale(0.9) translateY(2px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .Cart {
+    min-height: 85vh;
+    margin: 12vh auto;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    .cartList {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+      column-gap: 15px;
+      row-gap: 40px;
+    }
+
+    .titleNav {
+      .goBack {
+        height: 50px;
+        width: 50px;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+    }
+
+    .checkout {
+      position: fixed;
+      right: 3%;
+      bottom: 15px;
+      width: auto;
+      gap: 30px;
+      z-index: 4;
+
+      .totPrice {
+        font-size: 12px;
+      }
+
+      .goPay {
+        padding: 6px;
+        font-size: 12px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

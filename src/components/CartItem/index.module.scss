@@ -1,0 +1,254 @@
+.CartItem {
+  width: 90%;
+  min-height: 100px;
+  max-height: 120px;
+  text-align: center;
+  position: relative;
+
+  .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    .qnt {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7em;
+      font-size: 1.4em;
+      font-weight: 400;
+
+      .decrease {
+        font-size: 2.2em;
+        color: #ff1616;
+        cursor: pointer;
+      }
+
+      .increase {
+        font-size: 1.7em;
+        color: #02aa7a;
+        cursor: pointer;
+      }
+    }
+
+    .delete {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ff1616;
+      font-size: 2.5em;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(117, 28, 28);
+      }
+    }
+  }
+
+  .faceInactive {
+    transform: translateX(-80%);
+    border-radius: 0px;
+
+    .itemMore {
+      p {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .face {
+    transition: 0.3s;
+    border-radius: 10px;
+    background-color: #0f4355;
+    padding: 0px 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    img {
+      width: 40%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .description {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1em;
+      padding: 1em 0px;
+
+      .itemTitles {
+        height: 50%;
+        width: 100%;
+        span {
+          font-size: 0.6em;
+          color: #d7d7d7;
+          font-weight: 100;
+        }
+      }
+
+      .itemPrice {
+        height: 50%;
+        width: 100%;
+        color: #02aa7a;
+        font-size: 1.2em;
+      }
+    }
+
+    .itemMore {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.3s;
+
+      p {
+        margin: 0;
+        font-size: 1em;
+        cursor: pointer;
+        background-color: rgba($color: #000000, $alpha: 1);
+        border: 1px solid white;
+        padding: 5px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 100;
+        transition: 0.3s;
+        height: 1.9em;
+        width: 1.9em;
+      }
+    }
+
+    .actions {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .CartItem {
+    min-height: 260px;
+    max-height: 260px;
+    width: 220px;
+
+    .face {
+      display: flex;
+      flex-direction: column;
+      padding: 6px;
+
+      img {
+        width: 90%;
+        height: 50%;
+      }
+
+      .description {
+        width: 100%;
+        height: 25%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .itemTitles {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+        }
+
+        .itemPrice {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .itemMore {
+        display: none;
+      }
+
+      .actions {
+        height: 25%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .qnt {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.7em;
+          font-size: 1em;
+          font-weight: 400;
+
+          .decrease {
+            font-size: 2.2em;
+            color: #ff1616;
+            cursor: pointer;
+          }
+
+          .increase {
+            font-size: 1.7em;
+            color: #02aa7a;
+            cursor: pointer;
+          }
+        }
+
+        .delete {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s;
+          cursor: pointer;
+
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ff1616;
+            font-size: 2em;
+            border-radius: 8px;
+            padding: 4px;
+
+            &:hover {
+              background-color: rgb(117, 28, 28);
+            }
+          }
+        }
+      }
+    }
+  }
+}
