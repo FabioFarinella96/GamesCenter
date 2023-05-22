@@ -17,7 +17,9 @@ const Navbar = () => {
           </li>
         </Link>
         <li>
-          <RiShoppingCartLine className={styles.navIcon} />
+          <Link href={"/Cart"}>
+            <RiShoppingCartLine className={styles.navIcon} />
+          </Link>
         </li>
       </ul>
     </div>
