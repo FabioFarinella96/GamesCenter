@@ -2,6 +2,7 @@ import styles from "./index.module.scss";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BsBookmarkStar } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -10,9 +11,11 @@ const Navbar = () => {
         <li>
           <BsBookmarkStar className={styles.navIcon} />
         </li>
-        <li>
-          <BiHomeAlt2 className={styles.navIcon} />
-        </li>
+        <Link href="/">
+          <li>
+            <BiHomeAlt2 className={styles.navIcon} />
+          </li>
+        </Link>
         <li>
           <RiShoppingCartLine className={styles.navIcon} />
         </li>

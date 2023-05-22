@@ -17,10 +17,6 @@ export default function Home() {
     GET("games").then((data) => setData(data));
   }, []);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <>
       <Head>
