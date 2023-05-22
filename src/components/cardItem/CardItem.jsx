@@ -16,7 +16,9 @@ const CardItem = ({ game }) => {
 
   return (
     <div className={styles.CardItem}>
-      <h4 className={styles.title}>{name}</h4>
+      <h4 className={styles.title} onClick={openGame}>
+        {name}
+      </h4>
       <p className={styles.genres}>{genres[0]?.name}</p>
       <p
         className={`${styles.platform} ${

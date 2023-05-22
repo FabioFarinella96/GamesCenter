@@ -1,6 +1,6 @@
 import styles from "./singleGame/index.module.scss";
 import Layout from "../src/Layout/Layout";
-import { GET } from "../src/utils/http";
+import { GETSingleGame } from "../src/utils/http";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
@@ -10,7 +10,7 @@ export default function SingleGame() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    GET(`games/${router.query.slug}`).then((data) => setData(data));
+    GETSingleGame(`games/${router.query.slug}`).then((data) => setData(data));
   }, []);
 
   return (
