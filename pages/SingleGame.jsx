@@ -1,9 +1,5 @@
-
 import styles from "../styles/singleGame.module.scss";
 import SinglePageLayout from "../src/Layout/SinglePageLayout/SinglePageLayout";
-
-import styles from "./pages-styles/singleGame.module.scss";
-
 
 import { GETSingleGame } from "../src/utils/http";
 import { useRouter } from "next/router";
@@ -16,8 +12,15 @@ export default function SingleGame() {
 
   const [data, setData] = useState({});
 
+  if (typeof window !== "undefined") {
+    if (router.query.slug)
+      localStorage.setItem("game", JSON.stringify(router.query.slug));
+  }
+
   useEffect(() => {
-    GETSingleGame(`games/${router.query.slug}`).then((data) => setData(data));
+    GETSingleGame(`games/${JSON.parse(localStorage.getItem("game"))}`).then(
+      (data) => setData(data)
+    );
   }, []);
 
   return (
@@ -87,14 +90,16 @@ export default function SingleGame() {
             )}
           </div>
         </div>
-        {/* <div className={styles.typeGame}>
-          <p className={styles.genre}>{data?.genres[0]?.name}</p>
-          <p className={styles.genre}>{data?.tags[0]?.name}</p>
-          <p className={styles.genre}>{data.platforms?.platform.name}</p>
+        <div className={styles.typeGame}>
+          <p className={styles.genre}>{data.genres && data?.genres[0]?.name}</p>
+          <p className={styles.genre}>{data.tags && data?.tags[0]?.name}</p>
+          <p className={styles.genre}>
+            {data.platforms && data?.platforms[0]?.platform?.name}
+          </p>
         </div>
         <p className={styles.description}>
-          {data?.description_raw.slice(0, 150)} <span>Read more...</span>
-        </p> */}
+          {data?.description_raw?.slice(0, 150)} <span>Read more...</span>
+        </p>
       </div>
     </SinglePageLayout>
   );
