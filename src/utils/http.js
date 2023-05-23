@@ -12,3 +12,11 @@ export const GETSingleGame = async (endpoint) => {
   const data = res.json();
   return data;
 };
+
+export const GETScreenshots = async (endpoint) => {
+  const res = await fetch(
+    `${BASE_URL}games/${endpoint}/screenshots${fabioKey}`
+  );
+  const data = res.json();
+  return data;
+};
