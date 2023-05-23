@@ -33,7 +33,8 @@ const CartItem = () => {
             <span>Standard edition</span>
           </div>
           <div className={styles.itemPrice}>
-            <p>13,65$</p>
+            <p>Price:</p>
+            <span>13,65$</span>
           </div>
         </div>
         <div className={styles.itemMore} onClick={activeBack}>
