@@ -1,0 +1,208 @@
+.SingleGame {
+  width: 100%;
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .heroDesktop {
+    display: none;
+  }
+
+  .infoGame {
+    display: none;
+  }
+
+  .ctaButtons {
+    display: none;
+  }
+
+  .hero {
+    width: 100%;
+    height: 30vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .profileSection {
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(
+      to bottom,
+      rgba(32, 32, 32, 0) 0%,
+      rgb(14, 14, 14) 10%,
+      rgba(19, 19, 19, 0.722) 100%
+    );
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: 130px;
+    padding: 0 20px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+
+    .titleSection {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      p {
+        display: flex;
+        gap: 2px;
+
+        align-items: center;
+        .star {
+          color: yellow;
+        }
+      }
+
+      .title {
+        color: white;
+
+        .verified {
+          color: #00d699;
+        }
+      }
+
+      p {
+        color: white;
+      }
+    }
+  }
+
+  .typeGame {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+    margin-top: 10px;
+
+    .genre {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      padding: 8px 20px;
+      color: white;
+      background-color: rgba(62, 62, 62, 0.474);
+    }
+  }
+
+  .description {
+    color: rgb(56, 56, 56);
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  span {
+    color: white;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .SingleGame {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    margin-top: 0;
+    position: relative;
+
+    .heroDesktop {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 20%;
+      right: 30px;
+
+      .infoGame {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: rgba(13, 13, 13, 0.849);
+        padding: 20px;
+
+        .title {
+          font-size: 2.5em;
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .verified {
+          color: #00d699;
+        }
+
+        p {
+          color: white;
+          display: flex;
+          gap: 3px;
+
+          align-items: center;
+          .star {
+            color: yellow;
+          }
+        }
+
+        .description {
+          font-size: 15px;
+          color: rgb(207, 207, 207);
+          line-height: 1.5;
+        }
+      }
+
+      .ctaButtons {
+        width: 600px;
+        display: flex;
+        gap: 15px;
+
+        .button {
+          border: 0;
+          font-size: 18px;
+          background-color: rgba(17, 17, 17, 0.829);
+          color: #02aa7a;
+          padding: 15px 32px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #00d699;
+            color: #f3f3f3;
+          }
+        }
+      }
+    }
+
+    .hero {
+      display: none;
+    }
+    .profileSection {
+      display: none;
+    }
+  }
+}
