@@ -110,8 +110,15 @@
       .itemPrice {
         height: 50%;
         width: 100%;
-        color: #02aa7a;
         font-size: 1.2em;
+
+        p {
+          display: none;
+        }
+
+        span {
+          color: #02aa7a;
+        }
       }
     }
 
@@ -150,18 +157,25 @@
 
 @media screen and (min-width: 780px) {
   .CartItem {
-    min-height: 260px;
-    max-height: 260px;
-    width: 220px;
+    min-height: 300px;
+    max-height: 300px;
+    width: 280px;
+    filter: drop-shadow(-2px -2px 3px rgba($color: #000000, $alpha: 1));
+    transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(4px 4px 3px rgba($color: #000000, $alpha: 1));
+    }
 
     .face {
       display: flex;
       flex-direction: column;
-      padding: 6px;
+      padding: 10px;
 
       img {
         width: 90%;
-        height: 50%;
+        height: 60%;
       }
 
       .description {
@@ -180,14 +194,22 @@
           align-items: center;
           justify-content: center;
           gap: 6px;
+          font-size: 1em;
         }
 
         .itemPrice {
           width: 50%;
           height: 100%;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
+          gap: 0.2em;
+          font-size: 1em;
+
+          p {
+            display: block;
+          }
         }
       }
 
@@ -196,7 +218,7 @@
       }
 
       .actions {
-        height: 25%;
+        height: 15%;
         width: 100%;
         display: flex;
         align-items: center;
