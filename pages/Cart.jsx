@@ -1,5 +1,5 @@
 import Layout from "../src/Layout";
-import styles from "./pages-styles/cart.module.scss";
+import styles from "../styles/cart.module.scss";
 import { RiShoppingCartLine } from "react-icons/ri";
 import CartItem from "../src/components/CartItem/CartItem";
 
