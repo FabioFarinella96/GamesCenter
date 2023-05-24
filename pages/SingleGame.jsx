@@ -13,16 +13,18 @@ export default function SingleGame() {
   const [data, setData] = useState({});
   const [screenShots, setScreenshots] = useState({});
 
-  if (typeof window !== "undefined") {
-    if (router.query.slug)
-      localStorage.setItem("game", JSON.stringify(router.query.slug));
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (router.query.slug)
+        localStorage.setItem("game", JSON.stringify(router.query.slug));
+    }
+  }, [router.query.slug]);
 
   useEffect(() => {
     GETSingleGame(`games/${JSON.parse(localStorage.getItem("game"))}`).then(
       (data) => setData(data)
     );
-  }, []);
+  }, [router.query.slug]);
 
   useEffect(() => {
     GETScreenshots(router.query.slug).then((data) => setScreenshots(data));

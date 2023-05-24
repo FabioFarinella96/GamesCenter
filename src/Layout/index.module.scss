@@ -1,11 +1,85 @@
 .Layout {
   width: 100%;
   padding: 0 10px;
+
+  .modal {
+    transform: translateY(-200vh);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .searchBar {
+      background-color: white;
+      padding: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: black;
+
+      input {
+        border: none;
+        outline: none;
+        background-color: inherit;
+      }
+
+      .searchBtn {
+        color: white;
+        background-color: #02aa7a;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .modalActive {
+    transform: translate(0px);
+  }
+
+  .warn {
+    transform: translateY(-200vh);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 240px;
+    max-width: 240px;
+    z-index: 5;
+    padding: 6px;
+    background-color: rgba($color: #000000, $alpha: 1);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgba($color: #000000, $alpha: 1),
+      -2px -2px 3px rgba($color: #000000, $alpha: 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .warnActive {
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media screen and (min-width: 780px) {
   .Layout {
     width: 80%;
     margin: 0 auto;
+
+    .modal {
+      display: none;
+    }
   }
 }

@@ -17,24 +17,77 @@
     display: none;
   }
 
+  .searchBar {
+    display: none;
+  }
+
   .icons {
     display: flex;
+    align-items: center;
     gap: 20px;
     font-size: 20px;
 
-    .search {
+    .searchIcon {
       cursor: pointer;
-      transition: 0.4s;
+    }
 
-      &:hover {
-        background-color: #342e56;
-        font-size: 25px;
-        padding: 4px;
-        border-radius: 100%;
-      }
+    .searchIconNone {
+      display: none;
     }
   }
 }
 
 @media screen and (min-width: 780px) {
+  .Header {
+    .icons {
+      .searchBar {
+        transition: 0.4s;
+        background-color: white;
+        padding: 6px;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+          border: none;
+          outline: none;
+          background-color: transparent;
+        }
+
+        .cancel {
+          color: white;
+          background-color: #02aa7a;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 4px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+
+      .searchBarActive {
+        display: flex;
+        animation-name: run;
+        animation-duration: 1s;
+      }
+    }
+  }
+}
+
+@keyframes run {
+  0% {
+    opacity: 0;
+    width: 0px;
+    left: 0;
+  }
+  // 50% {
+  //   right: 0;
+  // }
+  100% {
+    opacity: 1;
+    left: 0px;
+    width: 100%;
+    // transform: scaleX(-1);
+  }
 }

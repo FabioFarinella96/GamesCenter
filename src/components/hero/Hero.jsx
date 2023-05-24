@@ -9,16 +9,12 @@ import { useRouter } from "next/router";
 const Hero = () => {
   const router = useRouter();
 
-  const hogwarts = {
-    slug: "hogwarts-legacy",
-  };
-  const cod = { slug: "call-of-duty-modern-warfare" };
-  const doom = {
-    slug: "doom",
-  };
+  const hogwarts = "hogwarts-legacy";
+  const cod = "call-of-duty-modern-warfare";
+  const doom = "doom";
 
   const openGame = (data) => {
-    const slug = data.slug;
+    const slug = data;
     router.push({
       pathname: "SingleGame",
       query: { slug },
