@@ -10,7 +10,7 @@ const Header = () => {
         <h2>Good morning!</h2>
       )}
       <div className={styles.icons}>
-        <BiSearch />
+        <BiSearch className={styles.search} />
         <BiUser />
       </div>
     </div>

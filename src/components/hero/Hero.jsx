@@ -4,24 +4,18 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
-import { GETSingleGame } from "../../utils/http";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const Hero = () => {
   const router = useRouter();
 
-  const [hogwarts, setHogwarts] = useState("");
-  const [cod, setCod] = useState("");
-  const [doom, setDoom] = useState("");
-
-  useEffect(() => {
-    GETSingleGame("games/hogwarts-legacy").then((data) => setHogwarts(data));
-    GETSingleGame("games/call-of-duty-modern-warfare").then((data) =>
-      setCod(data)
-    );
-    GETSingleGame("games/doom").then((data) => setDoom(data));
-  }, []);
+  const hogwarts = {
+    slug: "hogwarts-legacy",
+  };
+  const cod = { slug: "call-of-duty-modern-warfare" };
+  const doom = {
+    slug: "doom",
+  };
 
   const openGame = (data) => {
     const slug = data.slug;
