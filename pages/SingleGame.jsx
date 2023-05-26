@@ -74,15 +74,15 @@ export default function SingleGame() {
                 alt={styles.name}
               ></img>
               <img
-                src={screenShots.results && screenShots.results[1].image}
+                src={screenShots.results && screenShots?.results[1]?.image}
                 alt={styles.name}
               ></img>
               <img
-                src={screenShots.results && screenShots.results[2].image}
+                src={screenShots.results && screenShots?.results[2]?.image}
                 alt={styles.name}
               ></img>
               <img
-                src={screenShots.results && screenShots.results[3].image}
+                src={screenShots.results && screenShots?.results[3]?.image}
                 alt={styles.name}
               ></img>
             </div>

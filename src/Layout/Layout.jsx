@@ -23,20 +23,23 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     console.log(data);
-    if (data.reactions) {
+    if (data.name) {
       const slug = data.slug;
       router.push({
         pathname: "SingleGame",
         query: { slug },
       });
-    } else if (data !== {} && !data.name) {
+    } else if (data.detail === "Not found.") {
       router.push({
         pathname: "",
       });
       setWarn(() => true);
-      setInterval(() => {
+      let intervallo = setInterval(() => {
         setWarn(() => false);
+        clearInterval(intervallo);
       }, 2000);
+    } else {
+      return;
     }
   }, [data]);
 
