@@ -29,6 +29,7 @@ const SinglePageLayout = ({ children }) => {
         query: { slug },
       });
     }
+    setInput("");
   }, [data]);
 
   return (
