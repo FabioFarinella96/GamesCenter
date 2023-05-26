@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import { BiSearch, BiUser } from "react-icons/bi";
 import { MdCancel } from "react-icons/md";
 
-const Header = ({ input, setModal, search, setInput }) => {
+const Header = ({ input, setModal, search, setInput, modal }) => {
   const [searchActive, setSearchActive] = useState(false);
 
   const openSearch = () => {
     setModal((prev) => !prev);
     setSearchActive((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (modal === false) {
+      setSearchActive(() => false);
+    }
+  }, [modal]);
 
   return (
     <div className={styles.Header}>

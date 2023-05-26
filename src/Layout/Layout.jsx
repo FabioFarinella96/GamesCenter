@@ -50,10 +50,17 @@ const Layout = ({ children }) => {
         setInput={setInput}
         setModal={setModal}
         search={search}
+        modal={modal}
       />
       <Navbar />
       {children}
       <div className={`${styles.modal} ${modal && styles.modalActive}`}>
+        <div
+          onClick={() => setModal(() => false)}
+          className={styles.cancelModal}
+        >
+          X
+        </div>
         <form onSubmit={search} className={styles.searchBar}>
           <input
             value={input}
