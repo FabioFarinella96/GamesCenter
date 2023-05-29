@@ -19,6 +19,7 @@ const SinglePageLayout = ({ children }) => {
     GETSingleGame(`games/${input.replaceAll(" ", "-").toLowerCase()}`).then(
       (data) => setData(() => data)
     );
+    setModal(false);
   };
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import styles from "../styles/singleGame.module.scss";
 import SinglePageLayout from "../src/Layout/SinglePageLayout/SinglePageLayout";
+import Link from "next/link";
 
 import { GETSingleGame, GETScreenshots } from "../src/utils/http";
 import { useRouter } from "next/router";
@@ -12,6 +13,12 @@ export default function SingleGame() {
 
   const [data, setData] = useState({});
   const [screenShots, setScreenshots] = useState({});
+
+  const onAddCart = () => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cart", JSON.stringify(data));
+    }
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -89,7 +96,11 @@ export default function SingleGame() {
           </div>
           <div className={styles.ctaButtons}>
             <button className={styles.button}>Watch trailer</button>
-            <button className={styles.button}>Buy now</button>
+            <Link href="/Cart">
+              <button onClick={onAddCart} className={styles.button}>
+                Buy now
+              </button>
+            </Link>
           </div>
         </div>
         <img
@@ -156,7 +167,11 @@ export default function SingleGame() {
         </div>
         <div className={styles.ctaButton}>
           <button className={styles.button}>Watch trailer</button>
-          <button className={styles.button}>Buy now</button>
+          <Link href="/Cart">
+            <button onClick={onAddCart} className={styles.button}>
+              Buy now
+            </button>
+          </Link>
         </div>
       </div>
     </SinglePageLayout>

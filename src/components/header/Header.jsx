@@ -11,12 +11,6 @@ const Header = ({ input, setModal, search, setInput, modal }) => {
     setSearchActive((prev) => !prev);
   };
 
-  useEffect(() => {
-    if (modal === false) {
-      setSearchActive(() => false);
-    }
-  }, [modal]);
-
   return (
     <div className={styles.Header}>
       {new Date().getHours() >= 17 ? (

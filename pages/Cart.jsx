@@ -3,8 +3,15 @@ import styles from "../styles/cart.module.scss";
 import { RiShoppingCartLine } from "react-icons/ri";
 import CartItem from "../src/components/CartItem/CartItem";
 import { BiArrowBack } from "react-icons/bi";
+import { useState } from "react";
 
 export default function Cart() {
+  const [cartData, setCartData] = useState([
+    typeof window !== "undefined" && localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [],
+  ]);
+
   const goBack = () => {
     window.history.back();
   };
@@ -19,14 +26,13 @@ export default function Cart() {
         </div>
         <h2>Checkout</h2>
         <div className={styles.cartList}>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cartData.length > 0 ? (
+            cartData.map((data) => (
+              <CartItem data={data} setCartData={setCartData} key={data.id} />
+            ))
+          ) : (
+            <p>Il carrello è vuoto.</p>
+          )}
         </div>
         <div className={styles.checkout}>
           <div className={styles.totPrice}>

@@ -3,11 +3,24 @@ import styles from "./index.module.scss";
 
 import { HiOutlineTrash } from "react-icons/hi";
 
-const CartItem = () => {
+const CartItem = ({ data, setCartData }) => {
+  const { name, background_image, metacritic } = data;
+
   const [backActive, setBackActive] = useState(false);
 
   const activeBack = () => {
     setBackActive((prev) => !prev);
+  };
+
+  const deleteCartItem = () => {
+    localStorage.removeItem("cart");
+    setCartData([]);
+  };
+
+  const prices = {
+    price1: "$ 29.99",
+    price2: "$ 49,99",
+    price3: "$ 9,99",
   };
 
   return (
@@ -18,23 +31,22 @@ const CartItem = () => {
           <div className={styles.nQnt}>1</div>
           <div className={styles.increase}>+</div>
         </div>
-        <div className={styles.delete}>
+        <div onClick={deleteCartItem} className={styles.delete}>
           <HiOutlineTrash />
         </div>
       </div>
       <div className={`${styles.face} ${backActive && styles.faceInactive}`}>
-        <img
-          src="https://www.hynerd.it/wp-content/uploads/2022/03/hogwarts-legacy.jpg"
-          alt="cartImg"
-        />
+        <img src={background_image} alt={name} />
         <div className={styles.description}>
           <div className={styles.itemTitles}>
-            <h5>Hogwarts Legacy</h5>
+            <h5>{name}</h5>
             <span>Standard edition</span>
           </div>
           <div className={styles.itemPrice}>
             <p>Price:</p>
-            <span>13,65$</span>
+            {metacritic <= 50 && <span>{prices.price1}</span>}
+            {metacritic > 50 && <span>{prices.price2}</span>}
+            {metacritic < 20 && <span>{prices.price3}</span>}
           </div>
         </div>
         <div className={styles.itemMore} onClick={activeBack}>
@@ -46,7 +58,7 @@ const CartItem = () => {
             <div className={styles.nQnt}>1</div>
             <div className={styles.increase}>+</div>
           </div>
-          <div className={styles.delete}>
+          <div onClick={deleteCartItem} className={styles.delete}>
             <span>
               <HiOutlineTrash />
             </span>
