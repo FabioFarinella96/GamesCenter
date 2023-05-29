@@ -4,6 +4,7 @@ import { RiShoppingCartLine } from "react-icons/ri";
 import CartItem from "../src/components/CartItem/CartItem";
 import { BiArrowBack } from "react-icons/bi";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Cart() {
   const [cartData, setCartData] = useState([
@@ -31,7 +32,12 @@ export default function Cart() {
               <CartItem data={data} setCartData={setCartData} key={data.id} />
             ))
           ) : (
-            <p>Il carrello è vuoto.</p>
+            <div className={styles.emptyCart}>
+              <p>Il carrello è vuoto.</p>
+              <Link href="/">
+                <p>Torna alla Home</p>
+              </Link>
+            </div>
           )}
         </div>
         <div className={styles.checkout}>
