@@ -22,7 +22,6 @@ const Layout = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log(data);
     if (data.name) {
       const slug = data.slug;
       router.push({
