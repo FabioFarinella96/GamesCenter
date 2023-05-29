@@ -90,6 +90,7 @@ export default function SingleGame() {
           <div className={styles.ctaButtons}>
             <button className={styles.button}>Watch trailer</button>
             <button className={styles.button}>Buy now</button>
+            <button className={styles.button}>Add to wishlist</button>
           </div>
         </div>
         <img
@@ -157,6 +158,7 @@ export default function SingleGame() {
         <div className={styles.ctaButton}>
           <button className={styles.button}>Watch trailer</button>
           <button className={styles.button}>Buy now</button>
+          <button className={styles.button}>Add to wishlist</button>
         </div>
       </div>
     </SinglePageLayout>
