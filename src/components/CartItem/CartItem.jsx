@@ -1,20 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
 import { HiOutlineTrash } from "react-icons/hi";
 
 const CartItem = ({ data, setCartData }) => {
-  const { name, background_image, metacritic } = data;
+  const { slug, name, background_image, metacritic } = data;
 
   const [backActive, setBackActive] = useState(false);
+  const [cart, setCart] = useState(
+    typeof window !== "undefined" && localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : []
+  );
 
   const activeBack = () => {
     setBackActive((prev) => !prev);
   };
 
   const deleteCartItem = () => {
-    localStorage.removeItem("cart");
-    setCartData([]);
+    setCartData((prev) => [...prev.filter((game) => game.slug !== slug)]);
   };
 
   const prices = {
@@ -26,11 +30,6 @@ const CartItem = ({ data, setCartData }) => {
   return (
     <div className={styles.CartItem}>
       <div className={styles.back}>
-        <div className={styles.qnt}>
-          <div className={styles.decrease}>-</div>
-          <div className={styles.nQnt}>1</div>
-          <div className={styles.increase}>+</div>
-        </div>
         <div onClick={deleteCartItem} className={styles.delete}>
           <HiOutlineTrash />
         </div>
@@ -53,11 +52,6 @@ const CartItem = ({ data, setCartData }) => {
           <p>{">"}</p>
         </div>
         <div className={styles.actions}>
-          <div className={styles.qnt}>
-            <div className={styles.decrease}>-</div>
-            <div className={styles.nQnt}>1</div>
-            <div className={styles.increase}>+</div>
-          </div>
           <div onClick={deleteCartItem} className={styles.delete}>
             <span>
               <HiOutlineTrash />
