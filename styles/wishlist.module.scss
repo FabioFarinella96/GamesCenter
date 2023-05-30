@@ -1,3 +1,17 @@
 .Wishlist {
-  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10vh;
+
+  .title {
+    color: white;
+  }
+
+  .message {
+    color: rgb(195, 195, 195);
+    text-align: center;
+    line-height: 1.7;
+  }
 }

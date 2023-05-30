@@ -12,11 +12,22 @@ export default function SingleGame() {
   const router = useRouter();
 
   const [data, setData] = useState({});
+  const [wishList, setWishList] = useState(
+    typeof window !== "undefined" && localStorage.getItem("wishList")
+      ? JSON.parse(localStorage.getItem("wishList"))
+      : []
+  );
   const [screenShots, setScreenshots] = useState({});
 
   const onAddCart = () => {
     if (typeof window !== "undefined") {
       localStorage.setItem("cart", JSON.stringify(data));
+    }
+  };
+
+  const onWishList = () => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("wishList", JSON.stringify([...wishList, data]));
     }
   };
 
@@ -95,7 +106,11 @@ export default function SingleGame() {
             </div>
           </div>
           <div className={styles.ctaButtons}>
-            <button className={styles.button}>Watch trailer</button>
+            <Link href="/Wishlist">
+              <button onClick={onWishList} className={styles.button}>
+                Add to WishList
+              </button>
+            </Link>
             <Link href="/Cart">
               <button onClick={onAddCart} className={styles.button}>
                 Buy now
@@ -166,7 +181,11 @@ export default function SingleGame() {
           ></img>
         </div>
         <div className={styles.ctaButton}>
-          <button className={styles.button}>Watch trailer</button>
+          <Link href="/Wishlist">
+            <button onClick={onWishList} className={styles.button}>
+              Add to WishList
+            </button>
+          </Link>
           <Link href="/Cart">
             <button onClick={onAddCart} className={styles.button}>
               Buy now

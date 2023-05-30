@@ -8,9 +8,11 @@ const Navbar = () => {
   return (
     <div className={styles.Navbar}>
       <ul className={styles.iconsList}>
-        <li>
-          <BsBookmarkStar className={styles.navIcon} />
-        </li>
+        <Link href="/Wishlist">
+          <li>
+            <BsBookmarkStar className={styles.navIcon} />
+          </li>
+        </Link>
         <Link href="/">
           <li>
             <BiHomeAlt2 className={styles.navIcon} />
