@@ -17,29 +17,6 @@
     justify-content: flex-end;
     overflow: hidden;
 
-    .qnt {
-      width: 40%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7em;
-      font-size: 1.4em;
-      font-weight: 400;
-
-      .decrease {
-        font-size: 2.2em;
-        color: #ff1616;
-        cursor: pointer;
-      }
-
-      .increase {
-        font-size: 1.7em;
-        color: #02aa7a;
-        cursor: pointer;
-      }
-    }
-
     .delete {
       width: 40%;
       height: 100%;
@@ -58,8 +35,7 @@
   }
 
   .faceInactive {
-    transform: translateX(-80%);
-    border-radius: 0px;
+    transform: translateX(-42%);
 
     .itemMore {
       p {
@@ -224,34 +200,8 @@
         align-items: center;
         justify-content: space-between;
 
-        .qnt {
-          width: 50%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          gap: 0.7em;
-          font-size: 1.1em;
-          font-weight: 400;
-          background-color: rgba($color: #000000, $alpha: 0.6);
-          border-radius: 10px;
-
-          .decrease {
-            font-size: 2.4em;
-            color: #ff1616;
-            cursor: pointer;
-          }
-
-          .increase {
-            font-size: 1.6em;
-            color: #02aa7a;
-            cursor: pointer;
-          }
-        }
-
         .delete {
-          width: 50%;
+          width: 100%;
           height: 100%;
           display: flex;
           align-items: center;
@@ -259,19 +209,19 @@
           transition: 0.3s;
           cursor: pointer;
           font-size: 0.8em;
+          background-color: #ff1616;
+          border-radius: 8px;
+
+          &:hover {
+            background-color: rgb(117, 28, 28);
+          }
 
           span {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #ff1616;
             font-size: 2em;
-            border-radius: 8px;
             padding: 8px;
-
-            &:hover {
-              background-color: rgb(117, 28, 28);
-            }
           }
         }
       }

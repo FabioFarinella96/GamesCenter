@@ -13,10 +13,23 @@ export default function SingleGame() {
 
   const [data, setData] = useState({});
   const [screenShots, setScreenshots] = useState({});
+  const [cart, setCart] = useState(
+    typeof window !== "undefined" && localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : []
+  );
 
   const onAddCart = () => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("cart", JSON.stringify(data));
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([
+          ...cart.filter(
+            (game) => game.slug !== JSON.parse(localStorage.getItem("game"))
+          ),
+          data,
+        ])
+      );
     }
   };
 

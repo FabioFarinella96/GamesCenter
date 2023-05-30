@@ -3,19 +3,24 @@ import styles from "../styles/cart.module.scss";
 import { RiShoppingCartLine } from "react-icons/ri";
 import CartItem from "../src/components/CartItem/CartItem";
 import { BiArrowBack } from "react-icons/bi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Cart() {
-  const [cartData, setCartData] = useState([
+  const [cartData, setCartData] = useState(
     typeof window !== "undefined" && localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart"))
-      : [],
-  ]);
+      : []
+  );
 
   const goBack = () => {
     window.history.back();
   };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartData));
+  }, [cartData]);
+
   return (
     <Layout>
       <div className={styles.Cart}>
@@ -27,7 +32,7 @@ export default function Cart() {
         </div>
         <h2>Checkout</h2>
         <div className={styles.cartList}>
-          {cartData.length > 0 ? (
+          {cartData ? (
             cartData.map((data) => (
               <CartItem data={data} setCartData={setCartData} key={data.id} />
             ))
@@ -41,10 +46,6 @@ export default function Cart() {
           )}
         </div>
         <div className={styles.checkout}>
-          <div className={styles.totPrice}>
-            <span>Total:</span>
-            <span className={styles.price}>13,45$</span>
-          </div>
           <div className={styles.goPay}>
             <RiShoppingCartLine /> Go to payment
           </div>
