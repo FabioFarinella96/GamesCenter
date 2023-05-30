@@ -44,6 +44,12 @@ const SinglePageLayout = ({ children }) => {
       {children}
       <Navbar />
       <div className={`${styles.modal} ${modal && styles.modalActive}`}>
+        <div
+          onClick={() => setModal(() => false)}
+          className={styles.cancelModal}
+        >
+          X
+        </div>
         <form onSubmit={search} className={styles.searchBar}>
           <input
             value={input}

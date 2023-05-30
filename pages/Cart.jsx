@@ -32,7 +32,7 @@ export default function Cart() {
         </div>
         <h2>Checkout</h2>
         <div className={styles.cartList}>
-          {cartData ? (
+          {cartData.length > 0 ? (
             cartData.map((data) => (
               <CartItem data={data} setCartData={setCartData} key={data.id} />
             ))

@@ -8,8 +8,11 @@ const Header = ({ input, setModal, search, setInput, modal }) => {
 
   const openSearch = () => {
     setModal((prev) => !prev);
-    setSearchActive((prev) => !prev);
   };
+
+  useEffect(() => {
+    setSearchActive((prev) => !prev);
+  }, [modal]);
 
   return (
     <div className={styles.Header}>
