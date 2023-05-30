@@ -40,7 +40,15 @@ export default function SingleGame() {
 
   const onWishList = () => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("wishList", JSON.stringify([...wishList, data]));
+      localStorage.setItem(
+        "wishList",
+        JSON.stringify([
+          ...wishList.filter(
+            (game) => game.slug !== JSON.parse(localStorage.getItem("game"))
+          ),
+          data,
+        ])
+      );
     }
   };
 
@@ -126,7 +134,7 @@ export default function SingleGame() {
             </Link>
             <Link href="/Cart">
               <button onClick={onAddCart} className={styles.button}>
-                Buy now
+                Add to cart
               </button>
             </Link>
           </div>
@@ -201,7 +209,7 @@ export default function SingleGame() {
           </Link>
           <Link href="/Cart">
             <button onClick={onAddCart} className={styles.button}>
-              Buy now
+              Add to cart
             </button>
           </Link>
         </div>
