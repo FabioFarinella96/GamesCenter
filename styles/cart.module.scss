@@ -56,9 +56,18 @@
       .position {
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         gap: 8px;
+
+        .left {
+          width: 50%;
+        }
+
+        .right {
+          width: 30%;
+        }
       }
 
       .payNow {
@@ -204,18 +213,6 @@
       .payment {
         height: 70%;
         width: 35%;
-
-        .name,
-        .creditCard,
-        .position {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          flex-wrap: wrap;
-        }
       }
     }
 
