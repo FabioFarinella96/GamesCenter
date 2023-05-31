@@ -24,19 +24,15 @@ export default function Cart() {
     setPayActive((prev) => !prev);
   };
 
-  const activatePopUp = () => {
-    setPopUp(true);
-    setPayActive(false);
-
-    setInterval(() => {
-      setPopUp(false);
-    }, 3000);
-  };
-
   const payCompleted = (e) => {
     e.preventDefault();
     activatePayment();
     setCartData(() => []);
+    setPopUp(true);
+    setPayActive(false);
+    setInterval(() => {
+      setPopUp(false);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -58,39 +54,17 @@ export default function Cart() {
             </div>
             <h3>Credit card</h3>
             <div className={styles.creditCard}>
-              <input
-                className={styles.left}
-                type="text"
-                placeholder="name on card*"
-                required
-              />
-              <input
-                className={styles.right}
-                type="date"
-                placeholder="expiry*"
-                required
-              />
-              <input
-                className={styles.left}
-                type="number"
-                placeholder="card number*"
-                required
-              />
-              <input
-                className={styles.right}
-                type="password"
-                placeholder="cvv*"
-                required
-              />
+              <input type="text" placeholder="name on card*" required />
+              <input type="date" placeholder="expiry*" required />
+              <input type="number" placeholder="card number*" required />
+              <input type="password" placeholder="cvv*" required />
             </div>
             <h3>Position</h3>
             <div className={styles.position}>
-              <input type="country" placeholder="country*" required />
+              <input type="text" placeholder="country*" required />
               <input type="number" placeholder="postcode*" required />
             </div>
-            <button onClick={activatePopUp} className={styles.payNow}>
-              Pay now
-            </button>
+            <button className={styles.payNow}>Pay now</button>
           </form>
         </div>
         <div className={styles.titleNav}>
@@ -127,6 +101,7 @@ export default function Cart() {
         </div>
         {popUp && (
           <div className={styles.popUp}>
+            <img src="./logo.png" alt="logo" />
             <p>Thanks for your order! We hope to see you again soon</p>
           </div>
         )}
