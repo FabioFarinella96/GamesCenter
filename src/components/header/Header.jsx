@@ -5,7 +5,7 @@ import { MdCancel } from "react-icons/md";
 import Link from "next/link";
 
 const Header = ({ input, setModal, search, setInput, modal }) => {
-  const [searchActive, setSearchActive] = useState(false);
+  const [searchActive, setSearchActive] = useState(true);
 
   const openSearch = () => {
     setModal((prev) => !prev);
