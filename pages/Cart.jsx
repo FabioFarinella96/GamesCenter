@@ -14,6 +14,7 @@ export default function Cart() {
   );
 
   const [payActive, setPayActive] = useState(false);
+  const [popUp, setPopUp] = useState(false);
 
   const goBack = () => {
     window.history.back();
@@ -21,6 +22,15 @@ export default function Cart() {
 
   const activatePayment = () => {
     setPayActive((prev) => !prev);
+  };
+
+  const activatePopUp = () => {
+    setPopUp(true);
+    setPayActive(false);
+
+    setInterval(() => {
+      setPopUp(false);
+    }, 3000);
   };
 
   const payCompleted = (e) => {
@@ -58,7 +68,9 @@ export default function Cart() {
               <input type="text" placeholder="country*" required />
               <input type="number" placeholder="postcode*" required />
             </div>
-            <button className={styles.payNow}>Pay now</button>
+            <button onClick={activatePopUp} className={styles.payNow}>
+              Pay now
+            </button>
           </form>
         </div>
         <div className={styles.titleNav}>
@@ -93,6 +105,11 @@ export default function Cart() {
             </div>
           )}
         </div>
+        {popUp && (
+          <div className={styles.popUp}>
+            <p>Thanks for your order! We hope to see you again soon</p>
+          </div>
+        )}
       </div>
     </Layout>
   );
