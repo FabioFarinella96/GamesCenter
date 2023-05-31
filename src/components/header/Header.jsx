@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import { BiSearch, BiUser } from "react-icons/bi";
 import { MdCancel } from "react-icons/md";
+import Link from "next/link";
 
 const Header = ({ input, setModal, search, setInput, modal }) => {
   const [searchActive, setSearchActive] = useState(false);
@@ -22,7 +23,9 @@ const Header = ({ input, setModal, search, setInput, modal }) => {
       ) : (
         <h2>Good morning!</h2>
       )}
-      <img className={styles.logoDesktop} src="./logo.png" alt="logo" />
+      <Link href="/">
+        <img className={styles.logoDesktop} src="./logo.png" alt="logo" />
+      </Link>
       <div className={styles.icons}>
         {
           <form
