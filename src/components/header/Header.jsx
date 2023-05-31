@@ -16,12 +16,13 @@ const Header = ({ input, setModal, search, setInput, modal }) => {
 
   return (
     <div className={styles.Header}>
+      <img className={styles.logo} src="./logo.png" alt="logo" />
       {new Date().getHours() >= 17 ? (
         <h2>Good evening!</h2>
       ) : (
         <h2>Good morning!</h2>
       )}
-
+      <img className={styles.logoDesktop} src="./logo.png" alt="logo" />
       <div className={styles.icons}>
         {
           <form
