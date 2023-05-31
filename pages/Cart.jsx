@@ -46,9 +46,15 @@ export default function Cart() {
           )}
         </div>
         <div className={styles.checkout}>
-          <div className={styles.goPay}>
-            <RiShoppingCartLine /> Go to payment
-          </div>
+          {cartData.length > 0 ? (
+            <div className={styles.goPay}>
+              <RiShoppingCartLine /> Go to payment
+            </div>
+          ) : (
+            <div className={styles.goPayInactive}>
+              <RiShoppingCartLine /> Go to payment
+            </div>
+          )}
         </div>
       </div>
     </Layout>
