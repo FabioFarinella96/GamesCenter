@@ -146,7 +146,6 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background-color: rgba($color: #0a2f3b, $alpha: 0.8);
     border-radius: 10px;
 
     .goPay {
@@ -242,8 +241,8 @@
       z-index: 4;
 
       .goPay {
-        padding: 6px;
-        font-size: 12px;
+        padding: 10px;
+        font-size: 18px;
         border-radius: 6px;
       }
     }
